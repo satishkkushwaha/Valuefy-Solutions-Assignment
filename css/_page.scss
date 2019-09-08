@@ -1,0 +1,328 @@
+// Header Css
+header{
+    @extend .w-100;
+    background-color: $color-grey-light3;
+    height: 80px;
+    @extend .content--middle;
+    @extend .box-shadow;
+    @include respond(ipad-land) { //1024
+      height: 70px;
+    }
+    @include respond(tab-port) { //900
+      height: 70px;
+      position: fixed;
+      left: 0;
+      top: -1px;
+      z-index: 99;
+    }
+  
+  
+    .logo .logo-img{
+      @include respond(ipad-land) { //1024
+        width: 180px;
+      }
+      @include respond(phone) { //600
+        width: 160px;
+      }
+    }
+  }
+  
+  .header__back-n-logo-div{
+    width: 350px;
+  }
+  
+  .header__back-arrow{
+    width: 100px;
+    cursor: pointer;
+    height: 33px;
+  
+    img{
+      width: 35%;
+      transition: 0.3s;
+      &:hover{
+        width: 45%;
+      }
+    }
+  }
+  
+  .header__close-icon{
+    @extend .float-right;
+    cursor: pointer;
+    height: 30px;
+  
+    .close--img{
+      width: 85%;
+      transition: 0.3s;
+      &:hover{
+        width: 100%;
+      }
+    }
+  }
+  // Header Css End
+  
+  // Content Css
+  
+  main{
+    @extend .w-100;
+    @extend .content--center--middle;
+    height: calc(100vh - 80px);
+    @include respond(ipad-land) { //1024
+      height: calc(100vh - 70px);
+    }
+    @include respond(tab-port) { //900
+      height: auto;
+      padding: 95px 0px 0px;
+    }
+    @include respond(ipad-port) { //768
+      padding: 95px 0px 40px;
+    }
+    @include respond(phone) { //600
+      height: auto;
+      padding: 95px 0px 40px;
+    }
+  }
+  .main--container{
+    max-width: 1120px;
+    margin: 0;
+  }
+  
+  //point List
+  .point-list{
+    @extend .w-100;
+    padding-top: 30px;
+    @include respond(ipad-land) { //1024
+      padding-top: 10px;
+    }
+    @include respond(tab-port) { //900
+      padding-top: 20px;
+    }
+  
+    ul{
+      @extend .w-100;
+      @extend .text-center;
+  
+      li{
+        list-style: none;
+        display: inline-block;
+        padding: 10px 18px;
+        height: 70px;
+        @include respond(ipad-land) { //1024
+          margin: 0px 20px;
+        }
+        @include respond(tab-port) { //900
+          padding: 10px 25px;
+          margin: 0px 20px;
+        }
+        @include respond(ipad-port) { //768
+          margin: 0px;
+        }
+        @include respond(phone) { //600
+          padding: 10px 25px;
+          margin: 0px 0px;
+          float: left;
+        }
+  
+        span{
+          text-align: left;
+        }
+  
+      }
+    }
+  }
+  
+  .point-list-icon{
+    padding-top: 5px;
+    padding-right: 20px;
+  
+    .point--img{
+      width: 90%;
+    }
+  }
+  //point List End
+  
+  // Progress Bar
+  .progress-box{
+    @include respond(tab-port) { //900
+      padding-top: 40px;
+    }
+  }
+  .progress-bar-green-img{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 1em;
+    height: 1em;
+    z-index: 9;
+  }
+  .progress-bar-green-img .progress--img{
+    position: absolute;
+    left: -4px;
+    top: -4px;
+    width: 52%;
+  }
+  // Progress Bar End
+  
+  // Plan List
+  .plan-list-main{
+    flex: 0 0 70%;
+  }
+  
+  .plan-list {
+    display: block;
+    position: relative;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 18px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 2px solid $boder-color;
+    border-radius: 4px;
+    height: 80px;
+    font-weight: $font-medium;
+    text-align: left;
+    box-sizing: border-box;
+    @include respond(ipad-land) { //1024
+      height: 105px;
+    }
+    @include respond(ipad-port) { //768
+      height: 105px;
+      position: relative;
+      margin-bottom: 30px;
+    }
+    @include respond(phone) { //600
+      height: 225px;
+      position: relative;
+      margin-bottom: 30px;
+    }
+  }
+  
+  /* Hide the browser's default checkbox */
+  .plan-list input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  
+  /* Create a custom checkbox List*/
+  .checkmark {
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    height: 78px;
+    width: 5px;
+    border-radius: 4px;
+    @include respond(ipad-land) { //1024
+      height: 105px;
+    }
+    @include respond(tab-port) { //900
+      height: 80px;
+    }
+    @include respond(ipad-port) { //768
+      height: 105px;
+    }
+    @include respond(phone) { //600
+      width: 100%;
+      height: 3px;
+    }
+  }
+  
+  /* On mouse-over, add a green dark background color */
+  .plan-list:hover input ~ .checkmark {
+    background-color: $color-green-dark;
+  }
+  
+  /* When the checkbox is checked, add a green dark background color */
+  .plan-list input:checked ~ .checkmark {
+    background-color: $color-green-dark;
+  }
+  
+  /* Create the checkmark/indicator (hidden when not checked) */
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  /* Show the checkmark when checked */
+  .plan-list input:checked ~ .checkmark:after {
+    display: block;
+  }
+  
+  .plan-list .left-content {
+    width: calc(100% - 150px);
+    float: left;
+    padding-left: 20px;
+    padding-top: 10px;
+    @include respond(tab-port) { //900
+      width: calc(100% - 192px);
+    }
+    @include respond(phone) { //900
+      width: 100%;
+    }
+  }
+  
+  .plan-list .right-content {
+    width: 145px;
+    height: 100%;
+    float:right;
+    font-weight: $font-medium;
+    font-size: 36px;
+    color: #fff;
+    height: calc(100% + 2px);
+    margin-top: -2px;
+    @include respond(tab-port) { //900
+      width: 180px;
+    }
+    @include respond(phone) { //600
+      width: calc(100% + 4px);
+      height: 60px;
+      margin-top: 20px;
+      position: absolute;
+      bottom: 0px;
+      left: -2px;
+    }
+  }
+  
+  .plan-list-title, .plan-list-samllcontent{
+    float: left;
+  }
+  
+  .plan-list-samllcontent{
+    font-size: 14px;
+    font-weight: $font-light;
+    @extend .w-100;
+  }
+  
+  .dot{
+    width: 10px;
+    height: 10px;
+    border-radius:100%;
+    float: left;
+    margin-right: 10px;
+    margin-top: 8px;
+  }
+  // Plan List End
+  
+  
+  // Button Css
+  .btn{
+    font-size: 24px;
+    color: #fff;
+    font-weight: $font-medium;
+    padding: 10px 20px;
+    background-color: $color-green-light2;
+    border: 0;
+    display: inline-block;
+    @extend .box-shadow;
+    cursor: pointer;
+    transition: 0.3s;
+  
+    &:hover{
+      background-color: $color-green-dark;
+    }
+  }
+  

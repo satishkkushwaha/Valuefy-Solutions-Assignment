@@ -1,0 +1,48 @@
+// Color and Font Css
+
+$bg-color:#fff; // Body Bg Color
+
+$color-jordy-blue: #425b77;
+$color-green-dark: #14a388;
+$color-green-light: #13bc9c;
+$color-green-light2: #12d6b0;
+$color-grey-dark: #4d4d4d;
+$color-grey-light: #666666;
+$color-grey-light2: #5b5b5b;
+$color-grey-light3: #efefef; // header bg color
+$boder-color:#f5f5f5; //border color
+
+// Color Class
+.color-jordy-blue{ color: $color-jordy-blue;}
+.color-green-light{ color: $color-green-light;}
+
+// Background Color Class
+.bg-color-blue{ background-color: $color-jordy-blue;}
+.bg-color-green-light{ background-color: $color-green-light;}
+.bg-color-green-dark{ background-color: $color-green-dark;}
+
+// Font Type
+$font-light:300;
+$font-regular:400;
+$font-medium:500;
+
+.font-light{ font-weight: $font-light;}
+.font-regular{ font-weight: $font-regular;}
+.font-medium{ font-weight: $font-medium;}
+
+.font8{ font-size: 8px;}
+.font10{ font-size: 10px;}
+.font12{ font-size: 12px;}
+.font14{ font-size: 14px;}
+.font16{ font-size: 16px;}
+.font36{ font-size: 36px;}
+
+
+// Font line-height
+.line-height--1{
+    line-height: 1;
+}
+
+// circle width
+$circle-width: 0.08em;
+$circle-width-hover: 0.04em;

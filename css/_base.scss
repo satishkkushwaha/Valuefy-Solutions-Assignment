@@ -1,0 +1,112 @@
+// Main Base CSS
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0; 
+    box-sizing: inherit;
+}
+
+html{
+    font-size: 10px;
+}
+
+body{
+    line-height: 1.7;
+    background-color: $bg-color;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.6rem;
+    color: $color-grey-light;
+}
+
+
+// Flex Css
+.display-flex{ display: flex;}
+.display-flex.mobi--progress--list{   
+    
+    @include respond(tab-port) { //900
+        flex-direction: column;
+    }
+    // @include respond(phone) { //600
+    //     flex-direction: column;
+    // }
+}
+.content--middle{
+    @extend .display-flex;
+    align-items: center;
+}
+.content--center--middle{
+    @extend .display-flex;
+    align-items: center;
+    justify-content: center;
+}
+.flex-direction--row{
+    @extend .display-flex;
+    flex-direction: row;
+}
+.flex-direction--column{
+    @extend .display-flex;
+    flex-direction: column;
+}
+.content--space-between{
+    @extend .display-flex;
+    justify-content: space-between;
+}
+
+
+.box-shadow{ box-shadow: 0 4px 15px rgba(0,0,0,0.2);}
+
+// width div
+.w-100{ width: 100%;}
+.w-60{ width: 60%;}
+.w-50{ width: 50%;
+    @include respond(phone) { //600
+        width: 100%;
+        padding-top: 5px;
+    }
+}
+.w-40{ width: 40%;}
+
+// float
+.float-left{ float: left;}
+.float-right{ float: right;}
+
+// text-align
+.text-left{ text-align: left;}
+.text-center{ text-align: center;}
+.text-right{ text-align: right;}
+@include respond(phone) { //600
+    .text-left.mobi--text-center{ text-align: center;}
+}
+
+
+// Padding
+.pt-5{ padding-top: 5px;}
+.pt-20{ padding-top: 20px;}
+.p-10{ padding: 10px;}
+
+.mobi-pt20--none.pt-20{
+    @include respond(tab-port) { //900
+        padding-top: 0px;
+    }
+    @include respond(ipad-land) { //1024
+        padding-top: 0px;
+    }
+}
+
+.container{
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0px;
+    
+    @include respond(tab-land) { //1200
+        padding: 0px 20px;
+        box-sizing: border-box;
+    }
+    @include respond(phone) { //600
+        padding: 0px 10px;
+        box-sizing: border-box;
+    }
+
+}
